@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Modal to enter username -->
+    <div id="username-modal" class="modal">
+        <div class="modal-content">
+            <h2>Enter your username</h2>
+            <input type="text" id="username" placeholder="Enter username">
+            <button id="set-username">Enter</button>
+        </div>
+    </div>
+
+    <!-- Chat Container -->
+    <div class="chat-container" style="display: none;">
+        <!-- Left side (Users list) -->
+        <div class="user-list">
+            <div class="sidebar-header">
+                <h2>Safe Chats</h2>
+                <div class="sidebar-nav">
+                    <p id="settings">Settings</p>
+                    <p id="logout">Logout</p>
+                </div>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="user-search" placeholder="Search users">
+            </div>
+            <ul id="user-list"></ul>
+        </div>
+
+        <!-- Right side (Chat window) -->
+        <div class="chat-window">
+            <div id="chat-header">
+                <h3 id="chat-user">Select a user to chat</h3>
+            </div>
+            <!-- Chat boxes will be dynamically inserted here -->
+
+            <!-- Chat Input Section (Make sure it's inside the chat-window) -->
+            <div class="chat-input" style="display: none;">
+                <input type="text" id="message" placeholder="Type your message">
+                <button id="send-message">Send</button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- 
+npm init -y
+npm install express socket.io
+node server.js
+http://localhost:3000
+ -->
+
